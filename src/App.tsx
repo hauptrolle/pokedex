@@ -34,12 +34,14 @@ function App() {
   const { data, isLoading } = usePokemonList();
 
   return (
-    <Container>
+    <Container sx={(theme) => ({ paddingTop: theme.spacing.xl })}>
       <Title
         align="center"
         order={1}
         sx={(theme) => ({
           marginBottom: theme.spacing.xl,
+          color: "#fff",
+          fontFamily: "'Signika', sans-serif",
         })}
       >
         Pokedex
