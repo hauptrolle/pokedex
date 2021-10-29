@@ -1,4 +1,12 @@
-import { Card, Center, Group, Loader, SimpleGrid, Text } from "@mantine/core";
+import {
+  Card,
+  Center,
+  Group,
+  Loader,
+  SimpleGrid,
+  Text,
+  Title,
+} from "@mantine/core";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -40,20 +48,37 @@ export const HomePage = () => {
           initial="hidden"
           animate="show"
         >
-          {data.map((pokemon) => (
+          {data.results.map((pokemon, index) => (
             <MotionCard
-              key={pokemon.id}
+              key={index}
               variants={listItem}
               shadow="sm"
               padding="lg"
               component={Link}
-              to={`/${pokemon.id}`}
-              sx={{ textAlign: "center" }}
+              to={`/${index + 1}`}
+              sx={{
+                textAlign: "center",
+                position: "relative",
+              }}
             >
+              <Title
+                sx={{
+                  fontSize: 100,
+                  position: "absolute",
+                  top: -40,
+                  left: -10,
+                  opacity: 0.045,
+                  fontFamily: "'Signika', sans-serif",
+                }}
+              >
+                {index + 1}
+              </Title>
               <Group direction="row">
                 <img
                   alt={`Image of ${pokemon.name}`}
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/emerald/${pokemon.id}.png`}
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/emerald/${
+                    index + 1
+                  }.png`}
                   width={64}
                   height={64}
                 />
