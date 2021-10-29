@@ -1,7 +1,7 @@
+import { GlobalStyles, MantineProvider, NormalizeCSS } from "@mantine/core";
 import React from "react";
 import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { MantineProvider, GlobalStyles, NormalizeCSS } from "@mantine/core";
 
 import App from "./App";
 
