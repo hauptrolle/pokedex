@@ -2,6 +2,7 @@ import { GlobalStyles, MantineProvider, NormalizeCSS } from "@mantine/core";
 import React from "react";
 import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 
@@ -13,7 +14,9 @@ ReactDOM.render(
       <MantineProvider theme={{ colorScheme: "dark" }}>
         <NormalizeCSS />
         <GlobalStyles />
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </MantineProvider>
     </QueryClientProvider>
   </React.StrictMode>,
