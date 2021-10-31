@@ -11,7 +11,12 @@ const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <MantineProvider theme={{ colorScheme: "dark" }}>
+      <MantineProvider
+        theme={{
+          colorScheme: "dark",
+          headings: { fontFamily: "'Signika', sans-serif" },
+        }}
+      >
         <NormalizeCSS />
         <GlobalStyles />
         <BrowserRouter>

@@ -13,7 +13,6 @@ const App = () => {
         sx={(theme) => ({
           marginBottom: theme.spacing.xl,
           color: "#fff",
-          fontFamily: "'Signika', sans-serif",
         })}
       >
         Pokedex

@@ -47,9 +47,10 @@ export const DetailsPage = () => {
           </Box>
 
           <Title
-            order={2}
+            order={3}
             align="center"
             sx={(theme) => ({
+              color: "#fff",
               textTransform: "capitalize",
               marginBottom: theme.spacing.xl,
             })}

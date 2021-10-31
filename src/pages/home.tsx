@@ -7,6 +7,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
+import { useDocumentTitle } from "@mantine/hooks";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useSpinDelay } from "spin-delay";
@@ -34,6 +35,7 @@ const gridItem = {
 export const HomePage = () => {
   const { data, isLoading } = usePokemonList();
   const showSpinner = useSpinDelay(isLoading, { delay: 500, minDuration: 200 });
+  useDocumentTitle("Pokedex");
 
   if (showSpinner) {
     return (
