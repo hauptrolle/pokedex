@@ -1635,6 +1635,11 @@ source-map@^0.5.0:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
+spin-delay@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/spin-delay/-/spin-delay-1.1.0.tgz#23ba299e66f8cc42df764907494d0400ed456319"
+  integrity sha512-sYq8OXe5jUgcbX5VReeW8IzF2jEx5fpatGreQQDlDVLTC3rA3tZIr7SGv0leCBYccRDES0ybjQaGS1bR42M0uQ==
+
 string-argv@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.1.tgz#95e2fbec0427ae19184935f816d74aaa4c5c19da"

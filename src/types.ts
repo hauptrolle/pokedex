@@ -13,4 +13,13 @@ export interface Pokemon {
   sprites: {
     front_default: string;
   };
+  height: number;
+  weight: number;
+  stats: Array<{
+    base_stat: number;
+    effort: number;
+    stat: {
+      name: string;
+    };
+  }>;
 }

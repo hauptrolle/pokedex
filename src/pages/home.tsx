@@ -9,13 +9,14 @@ import {
 } from "@mantine/core";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useSpinDelay } from "spin-delay";
 
 import { usePokemonList } from "../hooks/usePokemonList";
 
 const MotionSimpleGrid = motion(SimpleGrid);
 const MotionCard = motion(Card);
 
-const container = {
+const gridVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -25,33 +26,36 @@ const container = {
   },
 };
 
-const listItem = {
+const gridItem = {
   hidden: { opacity: 0, y: +10 },
   show: { opacity: 1, y: 0 },
 };
 
 export const HomePage = () => {
   const { data, isLoading } = usePokemonList();
+  const showSpinner = useSpinDelay(isLoading, { delay: 500, minDuration: 200 });
+
+  if (showSpinner) {
+    return (
+      <Center>
+        <Loader color="red" size="lg" variant="dots" />
+      </Center>
+    );
+  }
 
   return (
     <>
-      {isLoading && (
-        <Center>
-          <Loader color="red" size="lg" variant="dots" />
-        </Center>
-      )}
-
       {data && (
         <MotionSimpleGrid
           cols={3}
-          variants={container}
+          variants={gridVariants}
           initial="hidden"
           animate="show"
         >
           {data.results.map((pokemon, index) => (
             <MotionCard
               key={index}
-              variants={listItem}
+              variants={gridItem}
               shadow="sm"
               padding="lg"
               component={Link}
